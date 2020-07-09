@@ -1,0 +1,16 @@
+if"location"=global then:
+
+position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    width: 50%;
+    height: 10px;
+    border: 1px solid white;
+    padding: 10px;
+
+
+
+
+z-index: map -> globalcontainer -> markers
