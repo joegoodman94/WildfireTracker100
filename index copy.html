@@ -239,13 +239,14 @@
     <script>
 // When the user clicks on <div>, open the popup
   var popup = document.getElementById("myPopup1");
+  var popup = document.getElementById("myPopup2");
+var popup = document.getElementById("myPopup3");
 
   function myFunction1() {
   popup.classList.toggle("show"); }
 
   window.addEventListener('click', ({ target }) => {
   if (!target.closest('.popup') && popup.classList.contains('show')) myFunction1();
-  event.stopImmediatePropagation();
 });
 
 
@@ -255,9 +256,6 @@
 
  <script>
 // When the user clicks on <div>, open the popup
-var popup = document.getElementById("myPopup2");
-var popup = document.getElementById("myPopup3");
-
 
   function myFunction2() {
   popup.classList.toggle("show"); }
@@ -265,19 +263,16 @@ var popup = document.getElementById("myPopup3");
   window.addEventListener('click', ({ target }) => {
   if (!target.closest('.popup') && popup.classList.contains('show')) myFunction2();
 });
-  event.stopImmediatePropagation();
 </script>
 
 
  <script>
-var popup = document.getElementById("myPopup3");
 
   function myFunction3() {
   popup.classList.toggle("show"); }
 
   window.addEventListener('click', ({ target }) => {
   if (!target.closest('.popup') && popup.classList.contains('show')) myFunction3();
-  event.stopImmediatePropagation();
 });
 </script>
 
