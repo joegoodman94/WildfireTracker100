@@ -7,7 +7,7 @@ if (!mapboxgl.supported()) {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/rospearce/ckc3fvx5v0tig1ipcowx490i6',
-        center: [8, 20],
+        center: [20, 8],
         zoom: 1.5,
         maxZoom: 12
     });
@@ -158,46 +158,6 @@ map.on('load', function() {
         .addTo(map);
 
 }
-
- 
-        
-
-    //    if (feature.properties['location'] == 'Global') {
-
-//<div id="map">
-     //        <div class="w3container
-        //     id="globalcontainer"><h3></h3>
-         //   </div>
-
-         //   <div id="globalmarkers" > 
-         //       <div class="popup" onclick="myFunction()">🔥
-          //      <span class="popuptext" id="myPopup"> 
-
-             //       '<h4 style="padding-bottom: 4px; border-bottom: 2px solid ' + colors[impactTag] + ';">' + feature.properties['title'] + '</h4><ul class="list-group list-tooltip"><li>Area of study: ' + feature.properties['location'] + '</li><li><div style="display:inline-block" class=' + impactTag + '>' + popupIcon[type] + "</div>"  
-   //     + impactTag + " " + 'that climate change increases the risk of wildfires.</li></ul><p class="summary">' 
-  //      + summary + '</p><p class="citation"><a href="'
-    //    + url + '" target="_blank">' + clipCitation + "),</a><span class='citation2'> " + feature.properties['journal'] + '</span></p>'
-
-         //       🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥</span>
-        //        </div>
-            
-       //     class = Marker 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥.</div>
-
-
-
-
-//else var divElement = document.createElement("Div");
-//divElement.id = "globalmarkers";
-//position
-//function myFunction() {
-  //      var popup = document.getElementById("myPopup");
-    //    popup.classList.toggle("show");
-      //  '<h4 style="padding-bottom: 4px; border-bottom: 2px solid ' + colors[impactTag] + ';">' + feature.properties['title'] + '</h4><ul class="list-group list-tooltip"><li>Area of study: ' + feature.properties['location'] + '</li><li><div style="display:inline-block" class=' + impactTag + '>' + popupIcon[type] + "</div>"  
-        //+ impactTag + " " + 'that climate change increases the risk of wildfires.</li></ul><p class="summary">' 
-       // + summary + '</p><p class="citation"><a href="'
-        //+ url + '" target="_blank">' + clipCitation + "),</a><span class='citation2'> " + feature.properties['journal'] + '</span></p>'
-        //}
-
     });
 
 // When the user clicks on div, open the popup
@@ -220,7 +180,7 @@ map.on('load', function() {
             $(this).removeClass("unselected");
         }
 
-        filterMap();
+        //REMOVE FILTER//filterMap();
 
     });
 
