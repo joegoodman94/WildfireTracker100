@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Climate change increases the risk of wildfires | Carbon Brief</title>
+        <meta name="description" content="DESCRIPTION">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="author" content="Daisy Dunne">
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow|PT+Serif" rel="stylesheet">
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="console" class='console-open'>
+            <div id="console-toggle">
+                    <a href="#" class="toggle"><span class="arrow-right-hidden">&#10095;</span><span class="arrow-left">&#10094;</span></a>
+            </div>
+            <div class="session">
+                <h1>Climate change increases the risk of <span class="highlight">wildfires</span></h1>
+                <p class="subtitle">Select the icons to explore the studies</p>
+                <div class="session key">
+                    <h2>Title</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input type="checkbox" name="Supports" checked="checked" hidden>                            
+                            <div class="colour-key" style="background-color: #c43e00;"></div>
+                            Supports statement
+                        </li><br>
+                        <li class="list-group-item">
+                            <input type="checkbox" name="Mostly" checked="checked" hidden>  
+                            <div class="colour-key" style="background-color: #ff6f00;"></div>
+                            Mostly supports statement
+                        </li><br>
+                        <li class="list-group-item">
+                            <input type="checkbox" name="Informs" checked="checked" hidden>  
+                            <div class="colour-key" style="background-color: #ffa040;"></div>
+                            Informs statement
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="session key">
+                    <h2>Type of study</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input type="checkbox" name="formal" checked="checked" hidden>
+                            <div class="colour-key" style="background-color: #333333;"></div>
+                            Formal study
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox" name="rapid" checked="checked" hidden>
+                            <div class="rapid-key"></div>
+                            Rapid assessment
+                        </li>
+                        <li class="list-group-item" id="trend">
+                            <input type="checkbox" name="trend" checked="checked" hidden>
+                            <div class="trend-key"></div>
+                            <img class="key-icon" src="img/hexagon.svg">
+                            Trend
+                        </li>
+                    </ul>
+                </div> -->
+                <!-- <div class="session impact">
+                    <div class="impacts">
+                        <h2>Impact</h2>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <input type="checkbox" name="cloud" checked="checked" hidden>    
+                                <i class="fas fa-cloud"></i>
+                                Atmosphere
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="cold" checked="checked" hidden>    
+                                <i class="far fa-snowflake"></i>
+                                Cold, snow & ice
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="coral" checked="checked" hidden>    
+                                <img class="key-icon" src="img/coral-dark.svg">
+                                Coral bleaching
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="drought" checked="checked" hidden>    
+                                <img class="key-icon" src="img/drought-dark.svg">
+                                Drought
+                            </li> 
+                            <li class="list-group-item">
+                                <input type="checkbox" name="eco" checked="checked" hidden>    
+                                <i class="fas fa-seedling"></i>
+                                Ecosystem function
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="heat" checked="checked" hidden>    
+                                <i class="fas fa-thermometer-full"></i>
+                                Heat
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="ocean" checked="checked" hidden>    
+                                <i class="fas fa-ship"></i>
+                                Oceans
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="flood" checked="checked" hidden>    
+                                <i class="fas fa-tint"></i>
+                                Rain & flooding
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="river" checked="checked" hidden>    
+                                <i class="fas fa-water"></i>
+                                River flow
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="storm" checked="checked" hidden>    
+                                <i class="fas fa-bolt"></i>
+                                Storm
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="sun" checked="checked" hidden>    
+                                <i class="fas fa-sun"></i>
+                                Sunshine
+                            </li>
+                            <li class="list-group-item">
+                                <input type="checkbox" name="fire" checked="checked" hidden>    
+                                <i class="fas fa-fire-alt"></i>
+                                Wildfire
+                            </li>
+                        </ul>
+
+                    </div> -->
+                    <!-- <div class="impacts controls">
+                        <button type="button" id="select">Select all</button>
+                        <button type="button" id="deselect">Deselect all</button>
+                    </div> -->
+                </div>
+                <!-- <div class="session last">
+                    <div class="row">
+                        <div class="column">
+                            <h2>Year</h2>
+                            <select id='selectorYear' class="selector">
+                                <option value='all' selected='selected'>All</option>
+                                <option value='2019' >2019</option>
+                                <option value='2018' >2018</option>
+                                <option value='2017' >2017</option>
+                                <option value='2016' >2016</option>
+                                <option value='2015' >2015</option>
+                                <option value='2014' >2014</option>
+                                <option value='2013' >2013</option>
+                                <option value='2012' >2012</option>
+                                <option value='2011' >2011</option>
+                                <option value='2010' >pre-2011</option>
+                            </select>
+                        </div> -->
+                        <div class="column">
+                            <h2>Events</h2>
+                            <p id="studies">73</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="map">
+             <div 
+             id="globalcontainer">
+             <!-- global container markers manually entered here -->
+             <div class="popup" >
+                <i class=' fas fa-fire-alt' id=1 style="color: #c43e00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color:  #c43e00 ;">
+                Global emergence of anthropogenic climate change in fire weather indices</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color: #c43e00; font-size: 1.1em;"></i> Supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This study of the fire weather index determined when anthropogenic climate change could/will first be detected outside the range of natural variability. The anthropogenic climate change signal emerged for 22% of burnable land area by 2019, most notably in the Amazon, Mediterranean and Southern Africa. By mid 21st Century, emergence was detected in projections of 33-62% of burnable lands. The area of emergence at 2C is half that at 3C above pre-industrial levels.”</p>
+
+                <p class="citation"><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018GL080959" target="_blank">Abatzoglou, J. T. et al. (2019),</a><span class='citation2'> Geophysical Research Letters</span></p>
+            </span>
+                </div>
+            
+        
+
+        <div class="popup" >
+                <i class=' fas fa-fire-alt' id=2 style="color:#ff6f00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ff6f00 ;">
+                A human-driven decline in global burned area</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ff6f00; font-size: 1.1em;"></i> Mostly supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This article reports on the suppression of burned area by humans, by around 25% at the global scale over the past two decades. Regionally diverse trends are observed, however the suppression of fires in savannahs dominates the global trend due to their significant contribution to global burned area. Burned area trended upwards in forested regions, notably in the boreal zone. The results indicate that direct human suppression of fire countered the effects of climate change on burned area.”</p>
+
+                <p class="citation"><a href="https://science.sciencemag.org/content/356/6345/1356" target="_blank">Andela, N. et al. (2017),</a><span class='citation2'> Science</span></p>
+            </span>
+                </div>
+
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=3 style="color:#ffa040;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ffa040;">
+                Defining pyromes and global syndromes of fire regimes</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ffa040; font-size: 1.1em;"></i> Informs statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“No top interpretation”</p>
+
+                <p class="citation"><a href="http://dx.doi.org/10.1073/pnas.1211466110" target="_blank">Archibald, S. et al. (2013)</a><span class='citation2'> Proceedings of the National Academy of Sciences (PNAS)</span></p>
+            </span>
+                </div>
+
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=4 style="color:#ff6f00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ff6f00 ;">
+                Reduction in global area burned and wildfire emissions since 1930s enhances carbon uptake by land</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ff6f00; font-size: 1.1em;"></i> Mostly supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This paper uses a model to look at how the area of fire burned has been affected by deforestation. It shows that land management can offset the effects of climate change on area burnt, resulting in less area burnt since the 1930s.”</p>
+
+                <p class="citation"><a href="http://dx.doi.org/10.1038/s41467-018-03838-0" target="_blank">Arora, V. K. & Melton, J. R. (2018),</a><span class='citation2'> Nature Communications</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=5 style="color:#ff6f00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ff6f00 ;">
+                Global patterns in the sensitivity of burned area to fire-weather: Implications for climate change</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ff6f00; font-size: 1.1em;"></i> Mostly supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“Fire weather index (FWI) was modelled globally for 1981–2000 using 7 Earth System Models and two climate scenarios. Observed fire patterns suggest that burned area is sensitive to change in FWI below ~17, but insensitive to changes in FWI above this threshold. Hence boreal forests and tropical forests are identified as sensitive to changes in temperature, precipitation, humidity and wind speed. Increases in burned area are modelled in these sensitive biomes for the period 2026–2045.”</p>
+
+                <p class="citation"><a href="http://dx.doi.org/10.1016/j.agrformet.2015.09.002" target="_blank">Bedia, J. et al. (2015),</a><span class='citation2'> Agricultural and Forest Meteorology</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=6 style="color:#ffa040;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ffa040 ;">
+                Causal relationships versus emergent patterns in the global controls of fire frequency</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ffa040; font-size: 1.1em;"></i> Informs statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This paper shows that, at the global scale burnt area: increases with maximum monthly temperature; increases with diurnal range (related to humidity); increases with the number of days without rainfall; increases with net primary production (NPP) because higher NPP means there is more fuel to burn; and decreases with cropland area and human population density.”</p>
+
+                <p class="citation"><a href="HTTPS://DOI.ORG/10.5194/BG-11-5087-2014" target="_blank">Bistinas, I. et al. (2014),</a><span class='citation2'> Biogeosciences</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=7 style="color:#ffa040;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ffa040 ;">
+                Comparing modelled fire dynamics with charcoal records for the Holocene</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ffa040; font-size: 1.1em;"></i> Informs statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“No top interpretation”</p>
+
+                <p class="citation"><a href="HTTPS://DOI.ORG/10.5194/CP-10-811-2014" target="_blank">Brücher, T. et al. (2014),</a><span class='citation2'> Climate of the Past</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=8 style="color:#c43e00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #c43e00 ;">
+                Will fire danger be reduced by using solar radiation management to limit global warming to 1.5C compared to 2C?</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#c43e00; font-size: 1.1em;"></i> Supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This paper projects that, in the future, more extreme fire danger will occur over larger areas of the planet, for more extended periods.”</p>
+
+                <p class="citation"><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2018GL077848" target="_blank">Burton, C. et al. (2018),</a><span class='citation2'> Geophysical Research Letters</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=9 style="color:#ffa040;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ffa040 ;">
+                Global trends in wildfire and its impacts: perceptions versus realities in a changing world</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ffa040; font-size: 1.1em;"></i> Informs statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This article offers a 'reality check' on trends in the global frequency, extent and severity of wildfire in the observational record, while noting that climate change has considerable potential to influence fire risk and that humans must learn to co-exist sustainably with fire. Satellite and inventory-based records point towards reductions in fire activity are observed identified at the global scale and in some regions, consistent with human suppression of wildfire risk.”</p>
+
+                <p class="citation"><a href="https://royalsocietypublishing.org/doi/abs/10.1098/rstb.2015.0345" target="_blank">Doerr, S. H & Santín, C. (2016),</a><span class='citation2'> Philosophical Transactions of the Royal Society B</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=10 style="color:#ffa040;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ffa040 ;">
+                Global wildland fire season severity in the 21st century</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ffa040; font-size: 1.1em;"></i> Informs statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This paper shows that we expect more fires in a warmer climate. They used climate models to projects how climate change affects wildfires, and show that significant increases in future wildfires in many parts of the world. This includes increases in area burnt and in the number of fires.”</p>
+
+                <p class="citation"><a href="http://dx.doi.org/10.1016/j.foreco.2012.10.022" target="_blank">Flannigan, M., Cantin, A. S. et al. (2013),</a><span class='citation2'> Forest Ecology and Management</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=11 style="color:#ff6f00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ff6f00 ;">
+                Recent global and regional trends in burned area and their compensating environmental controls</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ff6f00; font-size: 1.1em;"></i> Mostly supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This study helps to explain the decrease in burned area from 1996 and 2015, as measured by satellites. Model simulations show that recent increases in temperature promote burned area but this effect is offset by increasing wetness or increases in population. Increased vegetation cover and density lead to increased burned area in fuel-limited regions. Global and regional burned area trends result from the interaction of compensating trends in controls of wildfire at regional scales.”</p>
+
+                <p class="citation"><a href="https://iopscience.iop.org/article/10.1088/2515-7620/ab25d2/meta" target="_blank">Forkel, M. et al. (2019),</a><span class='citation2'> Environmental Research Communications</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=12 style="color:#ffa040;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ffa040 ;">
+                Analysis of daily, monthly, and annual burned area using the fourth‐generation global fire emissions database (GFED4)</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ffa040; font-size: 1.1em;"></i> Informs statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“No top interpretation”</p>
+
+                <p class="citation"><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1002/jgrg.20042" target="_blank">Giglio, L. et al. (2013),</a><span class='citation2'> Journal of Geophysical Research: Biogeosciences</span></p>
+            </span>
+                </div>
+
+                 <div class="popup" >
+                <i class=' fas fa-fire-alt' id=13 style="color:#ff6f00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ff6f00 ;">
+                The biomass burning contribution to climate–carbon-cycle feedback</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ff6f00; font-size: 1.1em;"></i> Mostly supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This paper used sedimentary charcoal records to extend observations of biomass burnt through the last millennium. A correlation was established between biomass burnt and temperature, enabling pre-industrial sedimentary charcoal records to act as proxy for temperature, when a suitably global and well sampled database is utilised. The sedimentary charcoal record enabled prediction of a strong contribution from fire emissions to the climate-carbon cycle feedback.”</p>
+
+                <p class="citation"><a href="http://doi.org/10.5194/esd-9-663-2018" target="_blank">Harrison, S. P. et al. (2018),</a><span class='citation2'> Earth System Dynamics</span></p>
+            </span>
+                </div>
+
+                 <div class="popup" >
+                <i class=' fas fa-fire-alt' id=14 style="color:#c43e00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #c43e00 ;">
+                Sensitivity of global wildfire occurrences to various factors in the context of global change</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#c43e00; font-size: 1.1em;"></i> Supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This study investigated the impact on fire occurrence rate between 2000-2050, due to: climate change (temperature, precipitation, humidity); lightning activity; vegetation density (CO2 fertilisation, anthropogenic land use and land cover); and anthropogenic population density (ignitions & suppression). \nSome significant regional variations were identified and explained, with fire occurrence increasing in most regions except southeast Africa, due to population density increase.”</p>
+
+                <p class="citation"><a href="http://dx.doi.org/10.1016/j.atmosenv.2015.06.002" target="_blank">Huang, Y. et al., (2015),</a><span class='citation2'> Atmospheric Environment</span></p>
+            </span>
+                </div>
+
+                 <div class="popup" >
+                <i class=' fas fa-fire-alt' id=15 style="color:#ff6f00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ff6f00 ;">
+                Climate-induced variations in global wildfire danger from 1979 to 2013</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ff6f00; font-size: 1.1em;"></i> Mostly supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This study of climate observations and fire metrics demonstrated an increase in global mean fire weather season length of 18.7%, 1979-2013, as well as a doubling of global burnable area affected by increased fire season length. These increased climatic risks could result in greater frequency or intensity of fires, depending on fuel loads and ignition sources.”</p>
+
+                <p class="citation"><a href="https://www.nature.com/articles/ncomms8537" target="_blank">Jolly, W. M. et al. (2015),</a><span class='citation2'> Nature Communications</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=16 style="color:#c43e00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #c43e00 ;">
+                Multimodel assessment of anthropogenic influence on record global and regional warmth during 2015</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#c43e00; font-size: 1.1em;"></i> Supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This paper presents a systematic analysis of the causes of extreme events around the world in 2015. It shows that human-induced climate change has increased the likelihood of a fire season such as the one observed in Alaska in 2015.”</p>
+
+                <p class="citation"><a href="http://dx.doi.org/10.1175/bams-d-16-0138.1" target="_blank">Kam, J. et al.  (2016),</a><span class='citation2'> Bulletin of the American Meteorological Society</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=17 style="color:#c43e00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #c43e00 ;">
+                Demographic controls of future global fire risk</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#c43e00; font-size: 1.1em;"></i> Supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“An ensemble of Earth system models, coupled with various scenarios of population density change, is used to evaluate the direct and indirect effects of humans on burned area. The models indicate an increase in maximum annual fire danger from 1971-2000 to 2071-2100 according to the Nesterov Index, which incorporates temperature and days since precipitation. Climate drivers alone contribute to an increase in burned area, while humans suppress fires globally but with notable regional variability.”</p>
+
+                <p class="citation"><a href="https://www.nature.com/articles/nclimate2999" target="_blank">Knorr, W. et al. (2016),</a><span class='citation2'> Nature Climate Change</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=18 style="color:#c43e00;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #c43e00 ;">
+                Global biomass burning: a synthesis and review of Holocene paleofire records and their controls</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#c43e00; font-size: 1.1em;"></i> Supports statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“No top interpretation”</p>
+
+                <p class="citation"><a href="http://dx.doi.org/10.1016/j.quascirev.2012.11.029" target="_blank">Marlon, J. R. et al. (2013),</a><span class='citation2'> Quaternary Science Reviews</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=19 style="color:#ffa040;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ffa040 ;">
+                Reconstructions of biomass burning from sediment-charcoal records to improve data–model comparisons</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ffa040; font-size: 1.1em;"></i> Informs statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“No top interpretation”</p>
+
+                <p class="citation"><a href="http://doi.org/10.5194/bg-13-3225-2016" target="_blank">Marlon, J. R. et al. (2016),</a><span class='citation2'> Biogeosciences</span></p>
+            </span>
+                </div>
+
+                <div class="popup" >
+                <i class=' fas fa-fire-alt' id=19 style="color:#ffa040;"></i>
+            <span class="popuptext" >
+                <h4 style=" padding-bottom: 4px; border-bottom: 2px solid; border-bottom-color: #ffa040 ;">
+               Future climate risk from compound events</h4>
+            <ul class="list-group list-tooltip">
+                <li>Area of study: Global</li>
+
+                <li> <i class=' fas fa-fire-alt' style="color:#ffa040; font-size: 1.1em;"></i> Informs statement that climate change increases the risk of wildfires.</li></ul>
+                <p class="summary">“This paper reviews the evidence for compound events (floods, wildfires, heatwaves and droughts) and argues that we should be looking at extreme events through their effects on multiple impacts.”</p>
+
+                <p class="citation"><a href="https://www.nature.com/articles/s41558-018-0156-3" target="_blank">Zscheischler, J. et al. (2018),</a><span class='citation2'> Nature Climate Change</span></p>
+            </span>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+        <h3 id="mobile-message">For an interactive version of the map, please view this page on a desktop, laptop or tablet.</h3>
+        <div id="map-graphic"></div>
+        
+    <script>
+// When the user clicks on <div>, open the popup
+
+const popups = [...document.getElementsByClassName('popup')];
+
+window.addEventListener('click', ({ target }) => {
+  const popup = target.closest('.popup');
+  const clickedOnClosedPopup = popup && !popup.classList.contains('show');
+  
+  popups.forEach(p => p.classList.remove('show'));
+  
+  if (clickedOnClosedPopup) popup.classList.add('show');  
+});
+
+</script>
+
+        <script src="data/studies.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
